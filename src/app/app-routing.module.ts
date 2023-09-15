@@ -6,11 +6,11 @@ import {CountryMaxGdpComponent} from "./country-max-gdp/country-max-gdp.componen
 import {CountryInfoComponent} from "./country-info/country-info.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/country-area', pathMatch: 'full' }, // Default route
-  { path: 'country-area', component: CountryAreaComponent }, // Route for country list
-  { path: 'country-languages/:countryId', component: CountryLanguagesComponent }, // Route for languages list
+  { path: '', redirectTo: '/country-area', pathMatch: 'full' },
+  { path: 'country-area', component: CountryAreaComponent },
+  { path: 'country-languages/:countryId', component: CountryLanguagesComponent },
   { path: 'country-stats', component: CountryMaxGdpComponent },
-  { path: 'country-info', component: CountryInfoComponent}// Route for country stats
+  { path: 'country-info', component: CountryInfoComponent}
 ];
 
 @NgModule({
