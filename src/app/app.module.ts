@@ -4,6 +4,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { AppComponent } from './app.component';
 import { SiteMenuComponent } from './site-menu/site-menu.component';
+import {RouterOutlet} from "@angular/router";
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { SiteMenuComponent } from './site-menu/site-menu.component';
   ],
   imports: [
     BrowserModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    RouterOutlet,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
