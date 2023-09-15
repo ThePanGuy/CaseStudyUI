@@ -10,7 +10,7 @@ export class CountryAreaComponent {
   constructor(private router: Router) {}
 
   onCountryClick(countryId: string) {
-    this.router.navigate(['/languages-list', countryId]);
+    this.router.navigate(['/country-languages', countryId]);
   }
 
 }
