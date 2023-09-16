@@ -56,7 +56,9 @@ export interface PageItem<T>{
 export class CountryInfoComponent implements AfterViewInit {
   displayedColumns: string[] = ['continentName', 'regionName', 'countryName', 'id.year', 'population', 'gdp'];
   countryInfo: CountryInfo[] = [];
-  filterRequest: FilterRequest = {};
+  filterRequest: FilterRequest = {
+    regionName: ""
+  };
 
   resultsLength = 0;
   isLoadingResults = true;
@@ -94,6 +96,27 @@ export class CountryInfoComponent implements AfterViewInit {
       ).subscribe(data => {
         this.countryInfo = data;
     })
+  }
+
+  applyFilters() {
+    this.getDataWithFilters();
+  }
+
+  getDataWithFilters() {
+    this.isLoadingResults = true;
+    this.countryService
+      .getCountryInfo(this.filterRequest, this.sort.active, this.sort.direction, this.paginator.pageIndex)
+      .pipe(catchError(() => of(null)))
+      .subscribe(data => {
+        this.isLoadingResults = false;
+        if (data == null) {
+          this.countryInfo = [];
+          this.resultsLength = 0;
+        } else {
+          this.countryInfo = data.content;
+          this.resultsLength = data.totalElements;
+        }
+      });
   }
 
 

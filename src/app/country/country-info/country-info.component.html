@@ -1,4 +1,10 @@
 <app-site-menu/>
+
+<input type="text" placeholder="Filter by Region" [(ngModel)]="filterRequest.regionName">
+<input type="number" placeholder="From Year" [(ngModel)]="filterRequest.from">
+<input type="number" placeholder="To Year" [(ngModel)]="filterRequest.to">
+<button (click)="applyFilters()">Apply Filters</button>
+
 <div class="app-container mat-elevation-z8">
   <div class="app-loading-shade"
        *ngIf="isLoadingResults">
