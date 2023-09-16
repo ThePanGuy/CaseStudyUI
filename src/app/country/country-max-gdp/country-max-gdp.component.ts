@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {CountryService} from "../services/country-service.service";
+import {CountryService} from "../../services/country-service.service";
 
 interface CountryBestStats {
   countryName: string,

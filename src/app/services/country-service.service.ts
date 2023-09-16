@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import {CountryLanguages} from "../country-languages/country-languages.component";
+import {CountryLanguages} from "../country/country-languages/country-languages.component";
 
 @Injectable({
   providedIn: 'root'

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {CountryService} from "../services/country-service.service";
+import {CountryService} from "../../services/country-service.service";
 
 export interface CountryLanguages {
   countryName: string,

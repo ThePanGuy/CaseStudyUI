@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {CountryAreaComponent} from "./country-area/country-area.component";
-import {CountryLanguagesComponent} from "./country-languages/country-languages.component";
-import {CountryMaxGdpComponent} from "./country-max-gdp/country-max-gdp.component";
-import {CountryInfoComponent} from "./country-info/country-info.component";
+import {CountryAreaComponent} from "./country/country-area/country-area.component";
+import {CountryLanguagesComponent} from "./country/country-languages/country-languages.component";
+import {CountryMaxGdpComponent} from "./country/country-max-gdp/country-max-gdp.component";
+import {CountryInfoComponent} from "./country/country-info/country-info.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/country-area', pathMatch: 'full' },

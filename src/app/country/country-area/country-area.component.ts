@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {CountryService} from "../services/country-service.service";
+import {CountryService} from "../../services/country-service.service";
 
 interface Country {
   id: string,
