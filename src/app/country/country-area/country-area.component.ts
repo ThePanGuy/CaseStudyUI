@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {CountryService} from "../../services/country-service.service";
+import {Subscription} from "rxjs";
 
-interface Country {
+export interface Country {
   id: string,
   name: string,
   area: number,
@@ -14,14 +15,20 @@ interface Country {
   templateUrl: './country-area.component.html',
   styleUrls: ['./country-area.component.css']
 })
-export class CountryAreaComponent implements OnInit{
+export class CountryAreaComponent implements OnInit, OnDestroy{
   countries: Country[] = [];
+  countriesSubscription?: Subscription;
+
   constructor(private router: Router, private countryService: CountryService) {}
 
   ngOnInit() {
-    this.countryService.getCountries().subscribe(data => {
+    this.countriesSubscription = this.countryService.getCountries().subscribe(data => {
       this.countries = data;
     })
+  }
+
+  ngOnDestroy() {
+    this.countriesSubscription && this.countriesSubscription.unsubscribe();
   }
 
   onCountryClick(countryId: string) {

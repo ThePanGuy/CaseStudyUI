@@ -10,6 +10,7 @@ import {CountryAreaComponent} from "./country/country-area/country-area.componen
 import {CountryLanguagesComponent} from "./country/country-languages/country-languages.component";
 import {CountryMaxGdpComponent} from "./country/country-max-gdp/country-max-gdp.component";
 import {CountryInfoComponent} from "./country/country-info/country-info.component";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {CountryInfoComponent} from "./country/country-info/country-info.componen
     BrowserModule,
     MatSlideToggleModule,
     RouterOutlet,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

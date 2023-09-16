@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import {CountryLanguages} from "../country/country-languages/country-languages.component";
+import {FetchService} from "./fetch.service";
 
 @Injectable({
   providedIn: 'root'
@@ -21,11 +22,12 @@ export class CountryService {
     // Add more country stats data as needed
   ];
 
-  constructor() { }
+  constructor(private fetchService: FetchService) { }
 
   // Fetch the list of countries
   getCountries(): Observable<any[]> {
-    return of(this.countries);
+    return this.fetchService.get('/countries/all')
+    // return of(this.countries);
   }
 
   // Fetch the list of spoken languages for a specific country code
