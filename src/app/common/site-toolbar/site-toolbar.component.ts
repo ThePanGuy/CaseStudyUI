@@ -1,5 +1,4 @@
 import {Component, ElementRef, OnDestroy, OnInit} from '@angular/core';
-import {CountryAreaComponent} from "../../country/country-area/country-area.component";
 
 @Component({
   selector: 'app-site-menu',

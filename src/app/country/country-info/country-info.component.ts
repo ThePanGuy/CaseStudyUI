@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, ViewChild} from '@angular/core';
-import {MatPaginator, MatPaginatorIntl} from "@angular/material/paginator";
+import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {catchError, map, merge, of, startWith, switchMap} from "rxjs";
 import {CountryService} from "../../services/country-service.service";
