@@ -31,9 +31,10 @@ export class CountryService {
   }
 
   // Fetch the list of spoken languages for a specific country code
-  getLanguages(countryCode2: string): Observable<CountryLanguages> {
+  getLanguages(countryId: string): Observable<any> {
+    return this.fetchService.get('/countries/languages/'+ countryId)
     // const filteredLanguages = this.languages.filter(lang => lang.countryCode2 === countryCode2);
-    return of(this.languages);
+    // return of(this.languages);
   }
 
   // Fetch country statistics

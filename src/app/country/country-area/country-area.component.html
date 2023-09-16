@@ -1,6 +1,6 @@
 <ol>
   <li *ngFor="let country of countries">
-    <a (click)="onCountryClick(country.id)">{{country.name}} </a>
+    <a (click)="onCountryClick(country.countryId)">{{country.name}} </a>
     <p>Area: {{country.area}} </p>
     <p>Country Code 2: {{country.countryCode2}} </p>
   </li>

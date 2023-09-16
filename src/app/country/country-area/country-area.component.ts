@@ -4,7 +4,7 @@ import {CountryService} from "../../services/country-service.service";
 import {Subscription} from "rxjs";
 
 export interface Country {
-  id: string,
+  countryId: string,
   name: string,
   area: number,
   countryCode2: string
