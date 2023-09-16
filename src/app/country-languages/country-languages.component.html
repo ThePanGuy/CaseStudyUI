@@ -1,1 +1,7 @@
-<p>country-languages works!</p>
+<h2>{{countryLanguages.countryName}}</h2>
+<p><strong>Spoken Languages:</strong></p>
+<ol>
+  <li *ngFor="let language of countryLanguages.languages">
+    <p>{{language}}</p>
+  </li>
+</ol>
