@@ -10,11 +10,11 @@ export class FetchService {
 
   constructor(private http: HttpClient) {}
 
-  get(url: string): Observable<any[]> {
-    return this.http.get<any[]>(this.baseUrl + url);
+  get<T>(url: string): Observable<T> {
+    return this.http.get<T>(this.baseUrl + url);
   }
 
-  post(url: string, data: any): Observable<any[]> {
-    return this.http.post<any[]>(this.baseUrl + url, data);
+  post<T>(url: string, data: any): Observable<T> {
+    return this.http.post<T>(this.baseUrl + url, data);
   }
 }

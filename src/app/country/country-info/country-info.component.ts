@@ -19,6 +19,35 @@ export interface FilterRequest {
   to?: number
 }
 
+export interface PageItem<T>{
+  "content": T[],
+  "pageable": {
+    "pageNumber": number,
+    "pageSize": number,
+    "sort": {
+      "empty": boolean,
+      "sorted": boolean,
+      "unsorted": boolean
+    },
+    "offset": number,
+    "paged": boolean,
+    "unpaged": boolean
+  },
+  "last": boolean,
+  "totalPages": number,
+  "totalElements": number,
+  "size": number,
+  "number": number,
+  "sort": {
+    "empty": boolean,
+    "sorted": boolean,
+    "unsorted": boolean
+  },
+  "first": boolean,
+  "numberOfElements": number,
+  "empty": boolean
+}
+
 @Component({
   selector: 'app-country-info',
   templateUrl: './country-info.component.html',
@@ -59,8 +88,7 @@ export class CountryInfoComponent implements AfterViewInit {
           if (data == null) {
             return [];
           }
-          debugger
-          this.resultsLength = data.numberOfElements;
+          this.resultsLength = data.totalElements;
           return data.content;
         })
       ).subscribe(data => {

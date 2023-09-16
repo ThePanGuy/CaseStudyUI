@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {CountryService} from "../../services/country-service.service";
 import {Subscription} from "rxjs";
 
-interface CountryBestStats {
+export interface CountryBestStats {
   countryName: string,
   countryCode3: string,
   year: number,
