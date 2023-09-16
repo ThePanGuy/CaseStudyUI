@@ -1,8 +1,9 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {catchError, map, merge, of, startWith, switchMap} from "rxjs";
 import {CountryService} from "../../services/country-service.service";
+import {RegionService} from "../../services/region.service";
 
 export interface CountryInfo {
   continentName: string,
@@ -48,14 +49,20 @@ export interface PageItem<T>{
   "empty": boolean
 }
 
+export interface Region {
+  regionId: string,
+  name: string
+}
+
 @Component({
   selector: 'app-country-info',
   templateUrl: './country-info.component.html',
   styleUrls: ['./country-info.component.css']
 })
-export class CountryInfoComponent implements AfterViewInit {
+export class CountryInfoComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['continentName', 'regionName', 'countryName', 'id.year', 'population', 'gdp'];
   countryInfo: CountryInfo[] = [];
+  availableRegions: Region[] = [];
   filterRequest: FilterRequest = {
     regionName: ""
   };
@@ -66,7 +73,13 @@ export class CountryInfoComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private countryService: CountryService) {
+  constructor(private countryService: CountryService, private regionService: RegionService) {
+  }
+
+  ngOnInit() {
+    this.regionService.getAvailableRegions().subscribe(data => {
+      this.availableRegions = data;
+    })
   }
 
   ngAfterViewInit() {
