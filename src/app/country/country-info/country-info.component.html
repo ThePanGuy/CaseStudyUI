@@ -1,15 +1,27 @@
 <app-site-menu/>
 
-<mat-label>Filter by Region</mat-label>
-<mat-select [(ngModel)]="filterRequest.regionName" (selectionChange)="applyFilters()">
-  <mat-option value="">All</mat-option>
-  <mat-option *ngFor="let region of availableRegions" [value]="region.name">
-    {{ region.name }}
-  </mat-option>
-</mat-select>
-<input type="number" placeholder="From Year" [(ngModel)]="filterRequest.from">
-<input type="number" placeholder="To Year" [(ngModel)]="filterRequest.to">
-<button (click)="applyFilters()">Apply Filters</button>
+<mat-form-field>
+  <mat-label>Filter by Region</mat-label>
+  <mat-select [(ngModel)]="filterRequest.regionName" (selectionChange)="applyFilters()">
+    <mat-option value="">All</mat-option>
+    <mat-option *ngFor="let region of availableRegions" [value]="region.name">
+      {{ region.name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+  <mat-label>From Year</mat-label>
+  <input type="number" matInput placeholder="From year" min="1960" max="2018" [(ngModel)]="filterRequest.from">
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+  <mat-label>To Year</mat-label>
+  <input type="number" matInput placeholder="To year" min="1960" max="2018" [(ngModel)]="filterRequest.to">
+</mat-form-field>
+
+<button mat-stroked-button (click)="applyFilters()">Apply Filters</button>
+<button mat-stroked-button (click)="resetFilters()">Reset Filters</button>
 
 <div class="app-container mat-elevation-z8">
   <div class="app-loading-shade"
@@ -59,5 +71,6 @@
     </table>
   </div>
 
-  <mat-paginator [length]="resultsLength" [pageSize]=20 [showFirstLastButtons]=true aria-label="Select page of GitHub search results"></mat-paginator>
+  <mat-paginator [length]="resultsLength" [pageSize]=20 [showFirstLastButtons]=true
+                 aria-label="Select page of GitHub search results"></mat-paginator>
 </div>

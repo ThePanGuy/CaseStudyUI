@@ -112,6 +112,28 @@ export class CountryInfoComponent implements OnInit, AfterViewInit {
   }
 
   applyFilters() {
+    if (this.filterRequest.from) {
+      if (this.filterRequest.from < 1960 || this.filterRequest.from > 2018) {
+        alert('From and To year should be in the range of 1960 and 2018');
+        return;
+      }
+    }
+    if (this.filterRequest.to) {
+      if (this.filterRequest.to < 1960 || this.filterRequest.to > 2018) {
+        alert('From and To year should be in the range of 1960 and 2018');
+        return;
+      }
+    }
+    this.getDataWithFilters();
+  }
+
+  resetFilters() {
+    this.filterRequest = {
+      regionName: ""
+    }
+    this.sort.active = 'id.year';
+    this.sort.direction = 'desc';
+    this.paginator.pageIndex = 0;
     this.getDataWithFilters();
   }
 
@@ -130,6 +152,12 @@ export class CountryInfoComponent implements OnInit, AfterViewInit {
           this.resultsLength = data.totalElements;
         }
       });
+  }
+
+  onYearSelected(event: any) {
+    let date = event as Date;
+    this.filterRequest.to = date.getFullYear();
+    this.applyFilters();
   }
 
 
