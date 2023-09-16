@@ -17,6 +17,10 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatMenuModule} from "@angular/material/menu";
 import { SiteDropdownComponent } from './common/site-dropdown/site-dropdown.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatSortModule} from "@angular/material/sort";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -30,6 +34,7 @@ import { SiteDropdownComponent } from './common/site-dropdown/site-dropdown.comp
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MatSlideToggleModule,
     RouterOutlet,
     AppRoutingModule,
@@ -38,7 +43,10 @@ import { SiteDropdownComponent } from './common/site-dropdown/site-dropdown.comp
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    MatProgressSpinnerModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
