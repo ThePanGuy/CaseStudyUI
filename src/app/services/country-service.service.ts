@@ -28,7 +28,7 @@ export class CountryService {
   }
 
   getCountryInfo(filterRequest: FilterRequest, sort: string, order: SortDirection, page: number): Observable<PageItem<CountryInfo>> {
-    const url = `/countries/country-stats?sort=${sort},${order}&page=${page + 1}`;
+    const url = `/countries/country-stats?sort=${sort},${order}&page=${page}`;
     return this.fetchService.post<PageItem<CountryInfo>>(url, filterRequest);
   }
 }
