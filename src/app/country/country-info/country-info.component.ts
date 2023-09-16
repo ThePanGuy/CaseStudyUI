@@ -25,7 +25,7 @@ export interface FilterRequest {
   styleUrls: ['./country-info.component.css']
 })
 export class CountryInfoComponent implements AfterViewInit {
-  displayedColumns: string[] = ['continentName', 'regionName', 'countryName', 'year', 'population', 'gdp'];
+  displayedColumns: string[] = ['continentName', 'regionName', 'countryName', 'id.year', 'population', 'gdp'];
   countryInfo: CountryInfo[] = [];
   filterRequest: FilterRequest = {};
 
@@ -59,7 +59,7 @@ export class CountryInfoComponent implements AfterViewInit {
           if (data == null) {
             return [];
           }
-
+          debugger
           this.resultsLength = data.numberOfElements;
           return data.content;
         })
