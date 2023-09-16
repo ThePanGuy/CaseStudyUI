@@ -1,13 +1,13 @@
 <app-site-menu/>
-<div class="example-container mat-elevation-z8">
-  <div class="example-loading-shade"
+<div class="app-container mat-elevation-z8">
+  <div class="app-loading-shade"
        *ngIf="isLoadingResults">
     <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
   </div>
 
-  <div class="example-table-container">
+  <div class="app-table-container">
 
-    <table mat-table [dataSource]="countryInfo" class="example-table"
+    <table mat-table [dataSource]="countryInfo" class="app-table"
            matSort matSortActive="id.year" matSortDisableClear matSortDirection="desc">
 
       <ng-container matColumnDef="continentName">
