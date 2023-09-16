@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SiteMenuComponent } from './site-menu.component';
+import { SiteToolbarComponent } from './site-toolbar.component';
 
 describe('SiteMenuComponent', () => {
-  let component: SiteMenuComponent;
-  let fixture: ComponentFixture<SiteMenuComponent>;
+  let component: SiteToolbarComponent;
+  let fixture: ComponentFixture<SiteToolbarComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SiteMenuComponent]
+      declarations: [SiteToolbarComponent]
     });
-    fixture = TestBed.createComponent(SiteMenuComponent);
+    fixture = TestBed.createComponent(SiteToolbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { AppComponent } from './app.component';
-import { SiteMenuComponent } from './site-menu/site-menu.component';
+import { SiteToolbarComponent } from './common/site-toolbar/site-toolbar.component';
 import {RouterOutlet} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
 import {CountryAreaComponent} from "./country/country-area/country-area.component";
@@ -12,15 +12,21 @@ import {CountryMaxGdpComponent} from "./country/country-max-gdp/country-max-gdp.
 import {CountryInfoComponent} from "./country/country-info/country-info.component";
 import {HttpClientModule} from "@angular/common/http";
 import {MatTableModule} from "@angular/material/table";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
+import {MatMenuModule} from "@angular/material/menu";
+import { SiteDropdownComponent } from './common/site-dropdown/site-dropdown.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SiteMenuComponent,
+    SiteToolbarComponent,
     CountryAreaComponent,
     CountryLanguagesComponent,
     CountryMaxGdpComponent,
-    CountryInfoComponent
+    CountryInfoComponent,
+    SiteDropdownComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +34,11 @@ import {MatTableModule} from "@angular/material/table";
     RouterOutlet,
     AppRoutingModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

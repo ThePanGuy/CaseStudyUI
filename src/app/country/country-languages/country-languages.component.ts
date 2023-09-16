@@ -23,14 +23,12 @@ export class CountryLanguagesComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    debugger
     this.route.params.subscribe(params => {
       this.countryId = params['countryId'];
     })
 
     if (this.countryId) {
       this.serviceSubscription = this.countryService.getLanguages(this.countryId).subscribe(data => {
-        debugger
         this.countryLanguages = data;
       })
     }
