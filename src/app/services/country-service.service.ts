@@ -39,6 +39,6 @@ export class CountryService {
 
   // Fetch country statistics
   getCountryBestStats(): Observable<any[]> {
-    return of(this.countryStats);
+    return this.fetchService.get('/countries/gdp');
   }
 }

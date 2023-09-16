@@ -11,6 +11,7 @@ import {CountryLanguagesComponent} from "./country/country-languages/country-lan
 import {CountryMaxGdpComponent} from "./country/country-max-gdp/country-max-gdp.component";
 import {CountryInfoComponent} from "./country/country-info/country-info.component";
 import {HttpClientModule} from "@angular/common/http";
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {HttpClientModule} from "@angular/common/http";
     MatSlideToggleModule,
     RouterOutlet,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
