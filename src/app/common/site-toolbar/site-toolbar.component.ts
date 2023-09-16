@@ -1,7 +1,7 @@
 import {Component, ElementRef, OnDestroy, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-site-menu',
+  selector: 'app-site-toolbar',
   templateUrl: './site-toolbar.component.html',
   styleUrls: ['./site-toolbar.component.css']
 })

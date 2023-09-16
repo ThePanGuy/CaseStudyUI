@@ -3,6 +3,7 @@
     <mat-icon>menu</mat-icon>
   </button>
   <ul class="dropdown-menu" *ngIf="isDropdownOpen">
+    <li><a [routerLink]="'/'">Home</a></li>
     <li><a [routerLink]="'/country-area'">Country Area</a></li>
     <li><a [routerLink]="'/country-stats'">Country Stats</a></li>
     <li><a [routerLink]="'/country-info'">Country Info</a></li>
