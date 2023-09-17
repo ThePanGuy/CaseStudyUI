@@ -1,8 +1,24 @@
 <app-site-toolbar/>
-<h2>{{countryLanguages.countryName}}</h2>
-<p><strong>Spoken Languages:</strong></p>
-<ol>
-  <li *ngFor="let language of countryLanguages.languages">
-    <p>{{language}}</p>
-  </li>
-</ol>
+<div class="languages">
+  <h2>{{countryLanguages.countryName}}</h2>
+  <p><strong>Official Languages:</strong></p>
+  <ol class="ol" *ngIf="countryLanguages?.officialLanguages else noOfficialLanguage">
+    <li *ngFor="let officialLanguage of countryLanguages.officialLanguages">
+      <p *ngIf="officialLanguage; else noOfficialLanguage">{{officialLanguage}}</p>
+    </li>
+  </ol>
+  <p><strong>More Spoken Languages:</strong></p>
+  <ol class="ol" *ngIf="countryLanguages?.languages else noMoreLanguages">
+    <li *ngFor="let language of countryLanguages.languages">
+      <p *ngIf="language; else noMoreLanguages">{{language}}</p>
+    </li>
+  </ol>
+</div>
+
+<ng-template #noOfficialLanguage>
+  <p style="margin-left: 30px">No official language.</p>
+</ng-template>
+
+<ng-template #noMoreLanguages>
+  <p style="margin-left: 30px">No more languages spoken.</p>
+</ng-template>

@@ -1,8 +1,10 @@
 <app-site-toolbar/>
 <ol>
   <li *ngFor="let country of countries">
-    <a (click)="onCountryClick(country.countryId)">{{country.name}} </a>
-    <p>Area: {{country.area}} </p>
-    <p>Country Code 2: {{country.countryCode2}} </p>
+    <span><strong>Country Name: </strong>
+      <a class="button" title="Show spoken languages for this country." (click)="onCountryClick(country.countryId)">{{country.name}} </a>
+    </span>
+    <span><strong>Area: </strong>{{country.area}} </span>
+    <span><strong>Country Code: </strong>{{country.countryCode2}} </span>
   </li>
 </ol>

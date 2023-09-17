@@ -5,6 +5,7 @@ import {Subscription} from "rxjs";
 
 export interface CountryLanguages {
   countryName: string,
+  officialLanguages: string[],
   languages: string[]
 }
 
