@@ -4,7 +4,7 @@ import {CountryAreaComponent} from "./country/country-area/country-area.componen
 import {CountryLanguagesComponent} from "./country/country-languages/country-languages.component";
 import {CountryMaxGdpComponent} from "./country/country-max-gdp/country-max-gdp.component";
 import {CountryInfoComponent} from "./country/country-info/country-info.component";
-import {HomePageComponent} from "./common/site-menu/home-page.component";
+import {HomePageComponent} from "./common/site-home-page/home-page.component";
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },

@@ -26,7 +26,7 @@ import {FormsModule} from "@angular/forms";
 import {MatSelectModule} from "@angular/material/select";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
-import { HomePageComponent } from './common/site-menu/home-page.component';
+import { HomePageComponent } from './common/site-home-page/home-page.component';
 
 @NgModule({
   declarations: [
