@@ -162,11 +162,4 @@ export class CountryInfoComponent implements OnInit, AfterViewInit, OnDestroy {
       });
   }
 
-  onYearSelected(event: any) {
-    let date = event as Date;
-    this.filterRequest.to = date.getFullYear();
-    this.applyFilters();
-  }
-
-
 }
