@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnDestroy, OnInit} from '@angular/core';
+import {Component, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-site-toolbar',
@@ -8,6 +8,7 @@ import {Component, ElementRef, OnDestroy, OnInit} from '@angular/core';
 export class SiteToolbarComponent {
   isDropdownOpen: boolean = false;
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef) {
+  }
 
 }

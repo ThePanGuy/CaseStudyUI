@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CountryAreaComponent } from './country-area.component';
+import {CountryAreaComponent} from './country-area.component';
 
 describe('CountryAreaComponent', () => {
   let component: CountryAreaComponent;

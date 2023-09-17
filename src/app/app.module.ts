@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
-import { AppComponent } from './app.component';
-import { SiteToolbarComponent } from './common/site-toolbar/site-toolbar.component';
+import {AppComponent} from './app.component';
+import {SiteToolbarComponent} from './common/site-toolbar/site-toolbar.component';
 import {RouterOutlet} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
 import {CountryAreaComponent} from "./country/country-area/country-area.component";
@@ -16,7 +16,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatMenuModule} from "@angular/material/menu";
-import { SiteDropdownComponent } from './common/site-dropdown/site-dropdown.component';
+import {SiteDropdownComponent} from './common/site-dropdown/site-dropdown.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatSortModule} from "@angular/material/sort";
 import {MatPaginatorModule} from "@angular/material/paginator";
@@ -26,7 +26,7 @@ import {FormsModule} from "@angular/forms";
 import {MatSelectModule} from "@angular/material/select";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
-import { HomePageComponent } from './common/site-home-page/home-page.component';
+import {HomePageComponent} from './common/site-home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -63,4 +63,5 @@ import { HomePageComponent } from './common/site-home-page/home-page.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

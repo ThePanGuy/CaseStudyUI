@@ -15,11 +15,12 @@ export interface Country {
   templateUrl: './country-area.component.html',
   styleUrls: ['./country-area.component.css']
 })
-export class CountryAreaComponent implements OnInit, OnDestroy{
+export class CountryAreaComponent implements OnInit, OnDestroy {
   countries: Country[] = [];
   countriesSubscription?: Subscription;
 
-  constructor(private router: Router, private countryService: CountryService) {}
+  constructor(private router: Router, private countryService: CountryService) {
+  }
 
   ngOnInit() {
     this.countriesSubscription = this.countryService.getCountries().subscribe(data => {

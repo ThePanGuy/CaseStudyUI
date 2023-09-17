@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 export class FetchService {
   private baseUrl = 'http://localhost:8080'
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   get<T>(url: string): Observable<T> {
     return this.http.get<T>(this.baseUrl + url);

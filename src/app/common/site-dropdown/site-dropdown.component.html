@@ -1,8 +1,8 @@
 <div class="dropdown">
-  <button mat-icon-button class="example-icon" (click)="toggleDropdown()">
+  <button (click)="toggleDropdown()" class="example-icon" mat-icon-button>
     <mat-icon>menu</mat-icon>
   </button>
-  <ul class="dropdown-menu" *ngIf="isDropdownOpen">
+  <ul *ngIf="isDropdownOpen" class="dropdown-menu">
     <li><a [routerLink]="'/'">Home</a></li>
     <li><a [routerLink]="'/country-area'">Country Area</a></li>
     <li><a [routerLink]="'/country-stats'">Country Stats</a></li>

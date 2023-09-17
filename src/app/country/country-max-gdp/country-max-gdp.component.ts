@@ -15,7 +15,7 @@ export interface CountryBestStats {
   templateUrl: './country-max-gdp.component.html',
   styleUrls: ['./country-max-gdp.component.css']
 })
-export class CountryMaxGdpComponent implements OnInit, OnDestroy{
+export class CountryMaxGdpComponent implements OnInit, OnDestroy {
   countryBestStats: CountryBestStats[] = [];
   serviceSubscription?: Subscription;
   displayedColumns: string[] = ['countryName', 'countryCode3', 'year', 'population', 'gdp'];

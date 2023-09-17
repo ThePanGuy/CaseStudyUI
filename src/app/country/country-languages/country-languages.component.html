@@ -2,13 +2,13 @@
 <div class="languages">
   <h2>{{countryLanguages.countryName}}</h2>
   <p><strong>Official Languages:</strong></p>
-  <ol class="ol" *ngIf="countryLanguages?.officialLanguages else noOfficialLanguage">
+  <ol *ngIf="countryLanguages?.officialLanguages else noOfficialLanguage" class="ol">
     <li *ngFor="let officialLanguage of countryLanguages.officialLanguages">
       <p *ngIf="officialLanguage; else noOfficialLanguage">{{officialLanguage}}</p>
     </li>
   </ol>
   <p><strong>More Spoken Languages:</strong></p>
-  <ol class="ol" *ngIf="countryLanguages?.languages else noMoreLanguages">
+  <ol *ngIf="countryLanguages?.languages else noMoreLanguages" class="ol">
     <li *ngFor="let language of countryLanguages.languages">
       <p *ngIf="language; else noMoreLanguages">{{language}}</p>
     </li>

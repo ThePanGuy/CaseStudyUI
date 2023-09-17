@@ -20,7 +20,7 @@ export interface FilterRequest {
   to?: number
 }
 
-export interface PageItem<T>{
+export interface PageItem<T> {
   "content": T[],
   "pageable": {
     "pageNumber": number,
@@ -111,7 +111,7 @@ export class CountryInfoComponent implements OnInit, AfterViewInit, OnDestroy {
         })
       ).subscribe(data => {
         this.countryInfo = data;
-    })
+      })
   }
 
   ngOnDestroy() {

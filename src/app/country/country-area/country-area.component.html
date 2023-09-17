@@ -2,7 +2,8 @@
 <ol>
   <li *ngFor="let country of countries">
     <span><strong>Country Name: </strong>
-      <a class="button" title="Show spoken languages for this country." (click)="onCountryClick(country.countryId)">{{country.name}} </a>
+      <a (click)="onCountryClick(country.countryId)" class="button"
+         title="Show spoken languages for this country.">{{country.name}} </a>
     </span>
     <span><strong>Area: </strong>{{country.area}} </span>
     <span><strong>Country Code: </strong>{{country.countryCode2}} </span>

@@ -8,7 +8,8 @@ import {Component, ElementRef} from '@angular/core';
 export class SiteDropdownComponent {
   isDropdownOpen: boolean = false;
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef) {
+  }
 
   ngOnInit() {
     this.addClickOutsideListener();

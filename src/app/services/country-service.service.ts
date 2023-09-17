@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {FetchService} from "./fetch.service";
-import {CountryInfo, FilterRequest, PageItem, Region} from "../country/country-info/country-info.component";
+import {CountryInfo, FilterRequest, PageItem} from "../country/country-info/country-info.component";
 import {SortDirection} from "@angular/material/sort";
 import {CountryLanguages} from "../country/country-languages/country-languages.component";
 import {Country} from "../country/country-area/country-area.component";

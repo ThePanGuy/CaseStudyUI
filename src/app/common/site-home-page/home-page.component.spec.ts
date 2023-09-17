@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { HomePageComponent } from './home-page.component';
+import {HomePageComponent} from './home-page.component';
 
 describe('SiteMenuComponent', () => {
   let component: HomePageComponent;

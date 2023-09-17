@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SiteToolbarComponent } from './site-toolbar.component';
+import {SiteToolbarComponent} from './site-toolbar.component';
 
 describe('SiteMenuComponent', () => {
   let component: SiteToolbarComponent;
