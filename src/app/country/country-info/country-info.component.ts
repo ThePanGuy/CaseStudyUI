@@ -15,7 +15,7 @@ export interface CountryInfo {
 }
 
 export interface FilterRequest {
-  regionName?: string,
+  regionId?: string,
   from?: number,
   to?: number
 }
@@ -63,9 +63,7 @@ export class CountryInfoComponent implements OnInit, AfterViewInit, OnDestroy {
   displayedColumns: string[] = ['continentName', 'regionName', 'countryName', 'id.year', 'population', 'gdp'];
   countryInfo: CountryInfo[] = [];
   availableRegions: Region[] = [];
-  filterRequest: FilterRequest = {
-    regionName: ""
-  };
+  filterRequest: FilterRequest = {};
 
   resultsLength = 0;
   isLoadingResults = true;
@@ -136,9 +134,7 @@ export class CountryInfoComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   resetFilters() {
-    this.filterRequest = {
-      regionName: ""
-    }
+    this.filterRequest = {}
     this.sort.active = 'id.year';
     this.sort.direction = 'desc';
     this.paginator.pageIndex = 0;

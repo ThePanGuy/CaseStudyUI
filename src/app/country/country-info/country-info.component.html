@@ -2,9 +2,9 @@
 
 <mat-form-field>
   <mat-label>Filter by Region</mat-label>
-  <mat-select (selectionChange)="applyFilters()" [(ngModel)]="filterRequest.regionName">
+  <mat-select (selectionChange)="applyFilters()" [(ngModel)]="filterRequest.regionId">
     <mat-option value="">All</mat-option>
-    <mat-option *ngFor="let region of availableRegions" [value]="region.name">
+    <mat-option *ngFor="let region of availableRegions" [value]="region.regionId">
       {{ region.name }}
     </mat-option>
   </mat-select>
