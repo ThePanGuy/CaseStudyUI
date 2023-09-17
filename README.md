@@ -1,8 +1,8 @@
-# Angular CaseStudy App
+# Angular Case Study App
 
 ## Description
 
-The Angular Country Information App is a web application that provides information about countries, including their basic details, official languages, and various statistics. This app is built using Angular, a popular JavaScript framework for building dynamic web applications.
+The Angular Case Study App is a web application that provides information about countries, including their basic details, official languages, and various statistics. This app is built using Angular, a popular JavaScript framework for building dynamic web applications.
 
 ## Features
 
