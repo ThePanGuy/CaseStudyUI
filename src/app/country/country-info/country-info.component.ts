@@ -1,7 +1,7 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
-import {catchError, map, merge, of, startWith, switchMap} from "rxjs";
+import {catchError, map, merge, of, startWith, Subscription, switchMap} from "rxjs";
 import {CountryService} from "../../services/country-service.service";
 import {RegionService} from "../../services/region.service";
 
@@ -59,7 +59,7 @@ export interface Region {
   templateUrl: './country-info.component.html',
   styleUrls: ['./country-info.component.css']
 })
-export class CountryInfoComponent implements OnInit, AfterViewInit {
+export class CountryInfoComponent implements OnInit, AfterViewInit, OnDestroy {
   displayedColumns: string[] = ['continentName', 'regionName', 'countryName', 'id.year', 'population', 'gdp'];
   countryInfo: CountryInfo[] = [];
   availableRegions: Region[] = [];
@@ -69,6 +69,9 @@ export class CountryInfoComponent implements OnInit, AfterViewInit {
 
   resultsLength = 0;
   isLoadingResults = true;
+
+  httpSubscription?: Subscription;
+  filterSubscription?: Subscription;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -86,7 +89,7 @@ export class CountryInfoComponent implements OnInit, AfterViewInit {
     // If the user changes the sort order, reset back to the first page.
     this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
 
-    merge(this.sort.sortChange, this.paginator.page)
+    this.httpSubscription = merge(this.sort.sortChange, this.paginator.page)
       .pipe(
         startWith({}),
         switchMap(() => {
@@ -109,6 +112,11 @@ export class CountryInfoComponent implements OnInit, AfterViewInit {
       ).subscribe(data => {
         this.countryInfo = data;
     })
+  }
+
+  ngOnDestroy() {
+    this.httpSubscription && this.httpSubscription.unsubscribe();
+    this.filterSubscription && this.filterSubscription.unsubscribe();
   }
 
   applyFilters() {
@@ -139,7 +147,7 @@ export class CountryInfoComponent implements OnInit, AfterViewInit {
 
   getDataWithFilters() {
     this.isLoadingResults = true;
-    this.countryService
+    this.filterSubscription = this.countryService
       .getCountryInfo(this.filterRequest, this.sort.active, this.sort.direction, this.paginator.pageIndex)
       .pipe(catchError(() => of(null)))
       .subscribe(data => {
